@@ -9,3 +9,7 @@ export interface SidebarLinksProps {
 export interface SocialIconsProps {
     icons: { href: string; icon: JSX.Element }[];
 }
+
+export interface AsideProps {
+    show: React.Dispatch<React.SetStateAction<boolean>>;
+}
