@@ -2,10 +2,9 @@ import SidebarHeader from "./SidebarHeader";
 import SidebarLinks from "./SidebarLinks";
 import SocialIcons from "./SocialIcons";
 import {socialIcons} from "../utils/data";
+import {AsideProps} from "../types/navbarTypes";
 
-interface AsideProps {
-    show: React.Dispatch<React.SetStateAction<boolean>>;
-}
+
 
 const Aside = ({show}: AsideProps) => {
     const closeSidebar = () => show(false);

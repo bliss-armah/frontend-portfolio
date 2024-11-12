@@ -6,6 +6,7 @@ import {FaBars} from "react-icons/fa";
 import Aside from "./Aside";
 import {Link} from "react-scroll";
 import Image from "next/image";
+import {links} from "../utils/data";
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
@@ -43,45 +44,27 @@ const Navbar = () => {
                         </button>
                     </div>
                     <ul className="nav-links">
-                        <li>
-                            <a href="/">home</a>
-                        </li>
-                        <li>
-                            <Link
-                                activeClass="active"
-                                to="about"
-                                smooth={true}
-                                duration={500}
-                                spy={true}
-                                offset={-70}
-                            >
-                                about
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                activeClass="active"
-                                to="project"
-                                smooth={true}
-                                duration={500}
-                                spy={true}
-                                offset={-70}
-                            >
-                                projects
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                activeClass="active"
-                                to="contact"
-                                smooth={true}
-                                duration={500}
-                                spy={true}
-                                offset={-70}
-                            >
-                                contact
-                            </Link>
-                        </li>
+                        {links.map((link, index) =>
+                            link.href ? (
+                                <li key={index}>
+                                    <a href={link.href}>
+                                        {link.label}
+                                    </a>
+                                </li>
+                            ) : (
+                                <li key={index}>
+                                    <Link
+                                        to={link.to!}
+                                        smooth={true}
+                                        duration={500}
+                                        spy={true}
+                                        offset={-70}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            )
+                        )}
                     </ul>
                 </div>
             </nav>
