@@ -1,9 +1,9 @@
-import { Link } from "react-scroll";
+import {Link} from "react-scroll";
 import {SidebarLinksProps} from "../types/navbarTypes";
 import {links} from "../utils/data";
 
 
-const SidebarLinks = ({ onLinkClick }: SidebarLinksProps) => (
+const SidebarLinks = ({onLinkClick}: SidebarLinksProps) => (
     <ul className="sidebar-links">
         {links.map((link, index) =>
             link.href ? (
