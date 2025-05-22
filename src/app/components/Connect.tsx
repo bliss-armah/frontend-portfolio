@@ -1,22 +1,22 @@
+import Link from "next/link";
 import project1 from "../assets/images/project-1.jpeg";
-import videoplay from "../assets/videos/connect.mp4";
-import { Link } from "react-router-dom";
 
 const Connect = () => {
   return (
     <div>
       <section className="connect">
         <video
-          controls
-          autoPlay
           muted
+          autoPlay
           loop
+          controls
           className="video-container"
-          poster={project1}
+          poster={project1.src}
         >
-          <source src={videoplay} type="video/mp4" />
-          Sorry, your browser does not support embedded videos
+          <source src="/videos/connect.mp4" type="video/mp4" />
+          Sorry, your browser does not support embedded videos.
         </video>
+
         <div className="video-banner">
           <div className="section-title">
             <h2>let's get in touch</h2>
@@ -32,7 +32,7 @@ const Connect = () => {
             waiting to get in touch and embark on a fruitful journey of creating
             something exceptional together.
           </p>
-          <Link to="/contact" className="btn">
+          <Link href="/contact" className="btn">
             contact me
           </Link>
         </div>

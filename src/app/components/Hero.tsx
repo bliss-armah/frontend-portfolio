@@ -4,11 +4,12 @@ import ButtonComponent from "./ButtonComponent";
 import Link from "next/link";
 import Image from "next/image";
 import { fetchHeroData } from "../_actions/fetchHeroData";
+import { urlFor } from "../../lib/sanity";
 
-const Hero =async () => {
+const Hero = async () => {
   const data = await fetchHeroData();
-  const heroData=data[0]
-  console.log(heroData)
+  const heroData = data[0];
+  console.log(heroData);
   return (
     <div>
       <header className="hero">
@@ -31,7 +32,13 @@ const Hero =async () => {
             </ul>
           </article>
           <article className="hero-img">
-            <Image src={profile} width={400} height={400} className="hero-photo" alt="my-logo" />
+            <Image
+              src={urlFor(heroData?.imageUrl).url()}
+              width={400}
+              height={400}
+              className="hero-photo"
+              alt="my-logo"
+            />
           </article>
         </div>
       </header>

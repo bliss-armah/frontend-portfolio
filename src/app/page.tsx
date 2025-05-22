@@ -1,4 +1,3 @@
-import { fetchBlogs } from "./_actions/fetchBlogs";
 import Hero from "@components/Hero";
 import About from "@components/About";
 import Services from "@components/Services";
@@ -11,7 +10,7 @@ export default async function Home() {
   return (
     <div>
       <Hero />
-      {/* <div id="about">
+      <div id="about">
         <About />
       </div>
       <Services />
@@ -22,7 +21,7 @@ export default async function Home() {
         <Connect />
       </div>
       <Skills />
-      <Timeline /> */}
+      <Timeline /> 
     </div>
   );
 }

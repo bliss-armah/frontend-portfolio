@@ -1,6 +1,7 @@
+import Link from "next/link";
 import about from "../assets/images/aboutme.jpg";
-import { Link } from "react-router-dom";
 import ButtonComponent from "./ButtonComponent";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
       <section className="section about">
         <div className="section-center about-center">
           <article className="about-img">
-            <img src={about} className="hero-photo" alt="about img" />
+            <Image src={about} className="hero-photo" alt="about img" />
           </article>
           <article className="about-info">
             <div className="section-title about-title">
@@ -21,8 +22,8 @@ const About = () => {
               HTML, CSS and JavaScript (and its endless list of frameworks). I
               enjoy coding and the challenge of learning something new everyday.
             </p>
-            <Link to="/about" >
-            <ButtonComponent name="about me"/>
+            <Link href="/about">
+              <ButtonComponent name="about me" />
             </Link>
           </article>
         </div>

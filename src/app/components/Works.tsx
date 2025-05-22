@@ -1,25 +1,9 @@
+import Link from "next/link";
 import { works } from "../utils/data";
-import { Link } from "react-router-dom";
 import ButtonComponent from "./ButtonComponent";
-import { useEffect } from "react";
+import Image from "next/image";
 
 const Works = () => {
-
-
-  const getProducts = async () => {
-    try {
-      const response = await fetch('https://portfolio-ix0m.onrender.com/api/v1/project');
-      const data = await response.json();
-      console.log(data); // Do something with the parsed data
-  
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(()=>{
-    getProducts()
-  },[])
 
   return (
     <div>
@@ -50,7 +34,7 @@ const Works = () => {
           {works.map((project) => (
             <a href={project.url} target="_blank"  className={project.className} key={project.id}>
               <article className="project shadow-lg">
-                <img
+                <Image
                   src={project.image}
                   alt="single project"
                   className="project-img"
@@ -64,7 +48,7 @@ const Works = () => {
           ))}
         </div>
         <div className="section-title mt-5">
-          <Link to="/projects" >
+          <Link href="/projects" >
         <ButtonComponent name="view all projects" styleAdd="hero-btn"/>
           </Link>
         </div>
